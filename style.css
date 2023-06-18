@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    /* 1rem = 10px; */
+    font-size: 62.5%;
+}
+body{
+    background-color: #0f0e0e;
+    max-width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main{
+    border-radius: 10px;
+    background-color: rgb(217, 222, 227);
+    width: 350px;
+    height: 85vh;
+    text-align: center;
+    padding: 2rem;
+    padding-top: 3rem;
+}
+h1{
+    font-size: 3.2rem;
+}
+.in-out-container{
+    width: 100%;
+    margin-top: 3rem;
+}
+.input{
+    width: 100%;
+}
+.input [type="text"]{
+    width: inherit;
+    height: 5rem;
+    border:none;
+    border-bottom: 1px solid #2c1b1b;
+    text-align: right;
+    font-size: 3rem;
+    padding: 1rem;
+    background-color: transparent;
+    color: #203b37;
+}
+.input [type="text"]:hover{
+    outline: none;
+}
+.input [type="text"]:focus{
+    outline: none;
+}
+.output{
+    font-size: 2.4rem;
+    margin-top: 1.4rem;
+    color: #372f2f;
+    text-align: right;
+}
+.keyboard{
+    margin: auto;
+    width: 300px;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5, 60px);
+    gap: 10px;
+}
+.keyboard .equal{
+    grid-column: 3/5;
+    border-radius: 50px;
+    font-weight: bold;
+}
+.keyboard .keys{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(179, 186, 186, 0.4);
+    
+}
+.keyboard .keys:hover{
+    background-color: rgb(190, 197, 200);
+}
+.buttons{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.keyboard .keys{
+    font-size: 2.5rem;
+    
+}
+.operators{
+    color: rgb(26, 182, 127);
+    font-weight: bold;
+    font-size: 2.8rem;
+}
+.clear{
+    color: rgb(227, 101, 101);
+    font-weight: bold;
+}
+.keyboard .equal{
+    background-color: rgb(15, 220, 142);
+    color: whitesmoke;
+    font-size: 3.4rem;
+}
+.keyboard .equal:hover{
+    background-color: rgb(24, 189, 126);
+}
+.keys .dot{
+    margin-top: -1rem;
+}
