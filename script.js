@@ -21,6 +21,13 @@ keyContainer.addEventListener("click", (e) => {
             console.log("clearing:", val)
             return
         }
+        // checking if user clicks on backspace
+        if(currObj.innerText === 'Z'){
+            backSpace()
+            return
+        }
+
+
         // checking if user want result
         if(currObj.innerText === '=')
         {
@@ -58,7 +65,6 @@ keyContainer.addEventListener("click", (e) => {
     else{
         currNum += currObj.innerText
         inputState(val, operator, currNum)
-        inputArr.push(currNum)
 
         console.log(currNum)    
     }
@@ -86,4 +92,14 @@ const calCulate = (val, operator) => {
 
 const inputState = (val, operator, currNum) =>{
     input.value = [val,operator, currNum].join("")
+}
+
+const backSpace = () => {
+    console.log("backspace")
+    console.log(input.value)
+    let temp = input.value
+    input.value = temp.slice(0, -1)
+    currNum = currNum.slice(0, -1)
+    console.log(temp)
+
 }
