@@ -10,13 +10,14 @@ let currNum = []
 keyContainer.addEventListener("click", (e) => {
     currObj = e.target
     if(currObj.id == 'op'){
-        
+        // checking obj it user click on clear button
         if(currObj.innerText === 'C'){
             val = []
             operator = ''
             console.log("clearing:", val)
             return
         }
+        // checking if user want result
         if(currObj.innerText === '=')
         {
             console.log("calculating result")
@@ -31,9 +32,10 @@ keyContainer.addEventListener("click", (e) => {
         }
 
 
-        // Assigning Operator into operator var
+        // Assigning Operator into operator variable
         operator = currObj.innerText
         console.log("currNum", currNum)
+        
 
         // checking if currNum is not null
         if(currNum!=null && currNum > 0){
