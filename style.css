@@ -56,6 +56,7 @@ h1{
 .output{
     font-size: 2.4rem;
     margin-top: 1.4rem;
+    padding: 0 1rem;
     color: #372f2f;
     text-align: right;
 }
