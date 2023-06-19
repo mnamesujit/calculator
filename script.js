@@ -6,6 +6,8 @@ const keyContainer = document.querySelector(".keyboard")
 let val = []
 let operator
 let currNum = []
+let inputArr = []
+input.value = inputArr
 
 keyContainer.addEventListener("click", (e) => {
     currObj = e.target
@@ -14,6 +16,8 @@ keyContainer.addEventListener("click", (e) => {
         if(currObj.innerText === 'C'){
             val = []
             operator = ''
+            currNum = []
+            input.value = [0]
             console.log("clearing:", val)
             return
         }
@@ -47,9 +51,13 @@ keyContainer.addEventListener("click", (e) => {
     }
     else{
         currNum += currObj.innerText
+        input.value = [val,operator, currNum].join("")
+        inputArr.push(currNum)
+
         console.log(currNum)    
     }
     console.log("global: ",val)
+    console.log("Input Arr is: " ,inputArr)
 })
 
 
@@ -68,4 +76,5 @@ const calCulate = (val, operator) => {
     output.innerText = nextNum
     console.log(nextNum)
     console.log(val)
+    return
 }
