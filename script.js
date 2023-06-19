@@ -6,8 +6,7 @@ const keyContainer = document.querySelector(".keyboard")
 let val = []
 let operator
 let currNum = []
-let inputArr = []
-input.value = inputArr
+
 
 keyContainer.addEventListener("click", (e) => {
     currObj = e.target
@@ -33,14 +32,18 @@ keyContainer.addEventListener("click", (e) => {
                 currNum = []
             }
             // Calling Calculate function
-            calCulate(val, operator)
+            if(val.length >1){
+                calCulate(val, operator)
+            }
             return
         }
 
 
         // Assigning Operator into operator variable
         operator = currObj.innerText
-        inputState(currNum, operator, val)
+        if(val.length <=1){
+            input.value = [...val, currNum, operator].join("")
+        }
         console.log("currNum", currNum)
         
 
@@ -60,7 +63,6 @@ keyContainer.addEventListener("click", (e) => {
         console.log(currNum)    
     }
     console.log("global: ",val)
-    console.log("Input Arr is: " ,inputArr)
 })
 
 
