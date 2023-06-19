@@ -45,7 +45,6 @@ keyContainer.addEventListener("click", (e) => {
     }
     else{
         currNum += currObj.innerText
-        // val = [...val, ]
         console.log(currNum)    
     }
     console.log("global: ",val)
@@ -59,9 +58,12 @@ const calCulate = (val, operator) => {
     let nextNum = val[1]
     console.log(operator)
     nextNum = eval(`${firstNum} ${operator} ${nextNum}`)
+    // Updating Next Number Value
     val[0] = nextNum
     val.pop()
+
+    // Updating output onScreen
+    output.innerText = nextNum
     console.log(nextNum)
     console.log(val)
-    // return
 }
