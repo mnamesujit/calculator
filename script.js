@@ -12,7 +12,8 @@ input.value = inputArr
 keyContainer.addEventListener("click", (e) => {
     currObj = e.target
     if(currObj.id == 'op'){
-        // checking obj it user click on clear button
+
+        // checking obj if user clicks on clear button
         if(currObj.innerText === 'C'){
             val = []
             operator = ''
@@ -27,6 +28,7 @@ keyContainer.addEventListener("click", (e) => {
             console.log("calculating result")
             if(currNum!=null && currNum > 0){
                 console.log("Current Num is: ", currNum)
+                inputState(val, operator, currNum)
                 val.push(Number(currNum))
                 currNum = []
             }
@@ -38,6 +40,7 @@ keyContainer.addEventListener("click", (e) => {
 
         // Assigning Operator into operator variable
         operator = currObj.innerText
+        inputState(currNum, operator, val)
         console.log("currNum", currNum)
         
 
@@ -51,7 +54,7 @@ keyContainer.addEventListener("click", (e) => {
     }
     else{
         currNum += currObj.innerText
-        input.value = [val,operator, currNum].join("")
+        inputState(val, operator, currNum)
         inputArr.push(currNum)
 
         console.log(currNum)    
@@ -77,4 +80,8 @@ const calCulate = (val, operator) => {
     console.log(nextNum)
     console.log(val)
     return
+}
+
+const inputState = (val, operator, currNum) =>{
+    input.value = [val,operator, currNum].join("")
 }
