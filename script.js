@@ -1,23 +1,67 @@
-const zero = document.querySelector("#zero")
-const one = document.querySelector("#one")
-const two = document.querySelector("#two")
-const three = document.querySelector("#three")
-const four = document.querySelector("#four")
-const five = document.querySelector("#five")
-const six = document.querySelector("#six")
-const seven = document.querySelector("#seven")
-const eight = document.querySelector("#eight")
-const nine = document.querySelector("#nine")
-const clear = document.querySelector("#clear")
-const devide = document.querySelector("#devide")
-const multiply = document.querySelector("multiply")
-const add = document.querySelector("#add")
-const sub = document.querySelector("#sub")
-const equal = document.querySelector("#equal")
-const modulus = document.querySelector("#modulus")
 
 const input = document.querySelector("#input")
-const output = document.querySelector("output")
+const output = document.querySelector("#output")
+const keyContainer = document.querySelector(".keyboard")
+
+let val = []
+let operator
+let currNum = []
+
+keyContainer.addEventListener("click", (e) => {
+    currObj = e.target
+    if(currObj.id == 'op'){
+        
+        if(currObj.innerText === 'C'){
+            val = []
+            operator = ''
+            console.log("clearing:", val)
+            return
+        }
+        if(currObj.innerText === '=')
+        {
+            console.log("calculating result")
+            if(currNum!=null && currNum > 0){
+                console.log("Current Num is: ", currNum)
+                val.push(Number(currNum))
+                currNum = []
+            }
+            // Calling Calculate function
+            calCulate(val, operator)
+            return
+        }
 
 
+        // Assigning Operator into operator var
+        operator = currObj.innerText
+        console.log("currNum", currNum)
 
+        // checking if currNum is not null
+        if(currNum!=null && currNum > 0){
+            console.log("Current Num is on main: ", currNum)
+            val.push(Number(currNum))
+            currNum = []
+            return
+        }
+    }
+    else{
+        currNum += currObj.innerText
+        // val = [...val, ]
+        console.log(currNum)    
+    }
+    console.log("global: ",val)
+})
+
+
+const calCulate = (val, operator) => {
+    console.log("calculated")
+    console.log(val)
+    let firstNum = val[0]
+    let nextNum = val[1]
+    console.log(operator)
+    nextNum = eval(`${firstNum} ${operator} ${nextNum}`)
+    val[0] = nextNum
+    val.pop()
+    console.log(nextNum)
+    console.log(val)
+    // return
+}

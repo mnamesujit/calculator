@@ -36,7 +36,7 @@ h1{
     width: 100%;
 }
 .input [type="text"]{
-    width: inherit;
+    width: 100%;
     height: 5rem;
     border:none;
     border-bottom: 1px solid #b7b2b2;
@@ -45,6 +45,7 @@ h1{
     padding: 1rem;
     background-color: transparent;
     color: #203b37;
+    overflow-y: scroll;
 }
 .input [type="text"]:hover{
     outline: none;
@@ -91,7 +92,15 @@ h1{
 
 .keyboard .keys{
     font-size: 2.5rem;
+    overflow: hidden;
     
+}
+.keys .key{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .operators{
     color: rgb(26, 182, 127);
@@ -109,7 +118,4 @@ h1{
 }
 .keyboard .equal:hover{
     background-color: rgb(24, 189, 126);
-}
-.keys .dot{
-    margin-top: -1rem;
 }
