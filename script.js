@@ -17,6 +17,7 @@ keyContainer.addEventListener("click", (e) => {
             val = []
             operator = ''
             currNum = []
+            output.innerText = 0
             input.value = [0]
             console.log("clearing:", val)
             return
