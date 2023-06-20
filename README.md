@@ -7,4 +7,4 @@ In this task I created a multi-functionalities included Calculator.
  - Inbuilt backspace key functionality
 
 ### Preview
-[!screenshot](./screenshot.png)
+![screenshot](./screenshot.png)
