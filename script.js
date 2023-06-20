@@ -8,9 +8,12 @@ let val = []
 let operator
 let currNum = []
 
-
+// Adding EvenentListener on click event
 keyContainer.addEventListener("click", (e) => {
+    // Assigning e.target to currObj
     currObj = e.target
+
+    // Checking if user press operator
     if(currObj.id == 'op'){
 
         // checking obj if user clicks on clear button
@@ -33,7 +36,10 @@ keyContainer.addEventListener("click", (e) => {
         if(currObj.innerText === '=')
         {
             if(currNum!=null && currNum > 0){
+                // Updating state on input box
                 inputState(val, operator, currNum)
+
+                // updating input array
                 val.push(Number(currNum))
                 currNum = []
             }
@@ -58,17 +64,20 @@ keyContainer.addEventListener("click", (e) => {
         }
     }
     else{
+        // if user wants to enter contegeous numbers or single number
         currNum += currObj.innerText
-        inputState(val, operator, currNum)
 
-        console.log(currNum)    
+        // changing input box states
+        inputState(val, operator, currNum)
     }
 })
 
-
+// Definition of calCulate function
 const calCulate = (val, operator) => {
     let firstNum = val[0]
     let nextNum = val[1]
+
+    // Evaluations of current statement
     nextNum = eval(`${firstNum} ${operator} ${nextNum}`)
 
     // Updating Next Number Value
@@ -77,15 +86,15 @@ const calCulate = (val, operator) => {
 
     // Updating output onScreen
     output.innerText = nextNum
-    console.log(nextNum)
-    console.log(val)
     return
 }
 
+// Definition of inputState function
 const inputState = (val, operator, currNum) =>{
     input.value = [val,operator, currNum].join("")
 }
 
+// Definition of backSpace function
 const backSpace = () => {
    
     let temp = input.value
