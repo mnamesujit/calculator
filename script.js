@@ -13,6 +13,12 @@ keyContainer.addEventListener("click", (e) => {
     // Assigning e.target to currObj
     currObj = e.target
 
+    // Checks if user hits backspace button
+    if(currObj.id == 'backspace'){
+        backSpace()
+        return
+    }
+
     // Checking if user press operator
     if(currObj.id == 'op'){
 
@@ -25,13 +31,7 @@ keyContainer.addEventListener("click", (e) => {
             input.value = [0]
             return
         }
-        // checking if user clicks on backspace
-        if(currObj.innerText === 'Z'){
-            backSpace()
-            return
-        }
-
-
+        
         // checking if user want result
         if(currObj.innerText === '=')
         {
@@ -100,5 +100,4 @@ const backSpace = () => {
     let temp = input.value
     input.value = temp.slice(0, -1)
     currNum = currNum.slice(0, -1)
-
 }
