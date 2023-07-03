@@ -12,6 +12,7 @@ let currNum = []
 keyContainer.addEventListener("click", (e) => {
     // Assigning e.target to currObj
     currObj = e.target
+    if((currObj.innerText).length > 2) return 
 
     // Checks if user hits backspace button
     if(currObj.id == 'backspace'){
