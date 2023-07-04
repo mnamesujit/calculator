@@ -126,6 +126,10 @@ h1{
 
 @media screen and (max-width: 425px) {
     main{
-        height: 90vh;   
+        height: fit-content;
+        padding: 40px 0;   
+    }
+    .in-out-container{
+        margin-top: 4rem;
     }
 }
