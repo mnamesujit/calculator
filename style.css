@@ -123,6 +123,7 @@ h1{
 
 @media screen and (max-width: 425px) {
     main{
-        height: 95vh;
+        height: fit-content;
+        padding-bottom: 25px;
     }
 }
